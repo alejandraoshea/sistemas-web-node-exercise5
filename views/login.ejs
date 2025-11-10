@@ -1,19 +1,24 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página Inicial - Max Verstappen Fan</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
+    <h1>Login</h1>
 
-<% if (error) { %>
-  <p style="color:rgb(30, 37, 113)"><%= error %></p>
-<% } %>
+    <% if (error) { %>
+    <p class="error-message"><%= error %></p>
+    <% } %>
 
-<form method="POST">
-  <label>Usuario:</label>
-  <input type="text" name="user">
+    <form method="POST">
+    <label>Usuario:</label>
+    <input type="text" name="user" required>
 
-  <br>
+    <label>Contraseña:</label>
+    <input type="password" name="pass" required>
 
-  <label>Contraseña:</label>
-  <input type="password" name="pass">
-
-  <br>
-
-  <button type="submit">Entrar</button>
-</form>
+    <button type="submit">Entrar</button>
+    </form>
+</body>

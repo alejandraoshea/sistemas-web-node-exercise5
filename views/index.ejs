@@ -1,15 +1,38 @@
-<h1>Página Inicial</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página Inicial - Max Verstappen Fan</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body>
 
-<ul>
-  <% items.forEach(item => { %>
-    <li><%= item %></li>
-  <% }) %>
-</ul>
+  <h1>Página Inicial</h1>
 
-<% if (!logged) { %>
-  <a href="/login">Login</a>
-<% } else { %>
-  <a href="/private">Ir a la página privada</a>
-  <br>
-  <a href="/logout">Logout</a>
-<% } %>
+  <% if (logged) { %>
+    <h2>Elementos cargados desde el servidor:</h2>
+    <div class="images-container">
+      <% items.forEach(item => { %>
+        <div class="item">
+          <h3><%= item.title %></h3>
+          <img src="<%= item.img %>" alt="<%= item.title %>" />
+        </div>
+      <% }) %>
+    </div>
+
+    <br>
+    <a href="/private"><button>Ir a página privada</button></a>
+    <br><br>
+    <a href="/logout">Cerrar sesión</a>
+
+  <% } else { %>
+
+    <div class="login-prompt">
+      <p>Bienvenido! Por favor inicia sesión para ver las imágenes.</p>
+      <a href="/login"><button>Iniciar sesión</button></a>
+    </div>
+
+  <% } %>
+
+</body>
+</html>
