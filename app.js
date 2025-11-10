@@ -7,8 +7,8 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use(
@@ -20,16 +20,17 @@ app.use(
 );
 
 const items = [
-  { title: "Max Verstappen", img: "/images/mv1(1).jpg" },
-  { title: "Max Verstappen", img: "/images/mv1(2).jpg" },
-  { title: "Max Verstappen", img: "/images/mv1(3).jpg" },
-  { title: "Max Verstappen", img: "/images/mv1(4).jpg" },
-  { title: "Max Verstappen", img: "/images/mv1(5).jpg" },
+  { title: "Max Verstappen", img: "/images/mv1-1.jpg" },
+  { title: "Max Verstappen", img: "/images/mv1-2.jpg" },
+  { title: "Max Verstappen", img: "/images/mv1-3.jpg" },
+  { title: "Max Verstappen", img: "/images/mv1-4.jpg" },
+  { title: "Max Verstappen", img: "/images/mv1-5.jpg" },
 ];
 
 
 app.get("/", (req, res) => {
   if (req.session.logged) {
+
     res.render("index", { items, logged: true });
   } else {
     res.render("index", { items: [], logged: false });

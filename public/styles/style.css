@@ -1,5 +1,5 @@
 body {
-  background-color: #0a0a0a;
+  background-color: #bdc7f7;
   color: #f0f0f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px;
@@ -14,8 +14,8 @@ body {
 }
 
 .item {
-  background-color: #1c1c1c;
-  border: 2px solid #e10600; 
+  background-color: #bdc7f7;
+  border: 2px solid #3110a7; 
   border-radius: 8px;
   padding: 15px;
   width: 180px;
@@ -25,7 +25,7 @@ body {
 
 .item:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #e10600;
+  box-shadow: 0 0 10px #3110a7;
 }
 
 .item img {
@@ -35,12 +35,11 @@ body {
 
 h1, h2 {
   text-align: center;
-  color: #e10600;
-  text-shadow: 1px 1px 3px #900000;
+  color: #3110a7;
 }
 
 button {
-  background-color: #e10600;
+  background-color: #3110a7;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -51,7 +50,7 @@ button {
 }
 
 button:hover {
-  background-color: #a80000;
+  background-color: #3110a7;
 }
 
 a {
@@ -65,20 +64,20 @@ a {
 }
 
 form {
-  background-color: #001f3f;
+  background-color: #3110a7;
   padding: 20px;
   max-width: 320px;
   margin: 20px auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px #f44336;
-  color: #ffc107;
+  box-shadow: 0 0 15px #4636f4;
+  color: #a81616;
   font-weight: bold;
 }
 
 label {
   display: block;
   margin-bottom: 8px;
-  color: #f9a825;
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -87,22 +86,22 @@ input[type="password"] {
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 15px;
-  border: 2px solid #f44336;
+  border: 2px solid #a81616;
   border-radius: 6px;
   font-size: 1rem;
-  background-color: #001f3f;
-  color: #ffc107;
+  background-color: #7e6ad5;
+  color: #e0e0ea;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-color: #f9a825;
+  border-color: #5652c4;
 }
 
 p.error-message {
-  background-color: #f44336;
+  background-color: #842c2c;
   padding: 10px;
   color: white;
   font-weight: bold;
@@ -111,30 +110,72 @@ p.error-message {
   margin: 0 auto 15px auto;
 }
 
-h1 {
-  color: #f9a825;
-  text-shadow: 1px 1px 3px #d32f2f;
-  margin-bottom: 20px;
-}
-
 p.welcome-text {
   font-size: 1.3rem;
-  color: #ffc107;
+  color: #8a2c2c;
   margin-bottom: 20px;
 }
 
 a.logout-link {
-  color: #f44336;
+  color: #8a2c2c93;
   font-weight: bold;
   text-decoration: none;
-  border: 2px solid #f44336;
+  border: 2px solid #8a2c2c;
   padding: 8px 20px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a.logout-link:hover {
-  background-color: #f44336;
+  background-color: #8a2c2c;
   color: white;
   text-decoration: none;
+}
+
+.images-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.item {
+  border: 2px solid #8a2c2c;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffebeb;
+  border-radius: 8px;
+  width: 160px;
+}
+
+button {
+  background-color: #8a2c2c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #8a2c2c;
+}
+
+.error-message {
+  color: #8a2c2c;
+}
+
+.login-prompt {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  color: #8a2c2c;
+}
+
+.logout-link {
+  color: #8a2c2c;
+  text-decoration: none;
+  font-weight: bold;
 }
