@@ -1,32 +1,52 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session');
+const express = require("express");
+const session = require("express-session");
+const path = require("path");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
 
-var app = express();
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: 'secreto123',
+    secret: "secreto123",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
 );
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const items = ["Elemento 1", "Elemento 2", "Elemento 3"];
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.get("/", (req, res) => {
+  res.render("index", { items, logged: req.session.logged });
+});
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.get("/login", (req, res) => {
+  res.render("login", { error: null });
+});
 
-module.exports = app;
+app.post("/login", (req, res) => {
+  const { user, pass } = req.body;
+
+  if (user === "admin" && pass === "1234") {
+    req.session.logged = true;
+    return res.redirect("/private");
+  }
+
+  res.render("login", { error: "Usuario o contraseña incorrectos" });
+});
+
+app.get("/private", (req, res) => {
+  if (!req.session.logged) return res.redirect("/login");
+  res.render("private", { user: "admin" });
+});
+
+app.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
+
+app.listen(3000, () => console.log("Servidor en http://localhost:3000"));

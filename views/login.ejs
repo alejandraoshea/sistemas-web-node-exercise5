@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<% if (error) { %>
+  <p style="color:rgb(30, 37, 113)"><%= error %></p>
+<% } %>
+
+<form method="POST">
+  <label>Usuario:</label>
+  <input type="text" name="user">
+
+  <br>
+
+  <label>Contraseña:</label>
+  <input type="password" name="pass">
+
+  <br>
+
+  <button type="submit">Entrar</button>
+</form>
