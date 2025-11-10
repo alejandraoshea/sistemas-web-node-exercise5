@@ -1,3 +1,35 @@
+.images-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.item {
+  background-color: #20034f;
+  border: 2px solid #8a2c2c;
+  border-radius: 8px;
+  padding: 10px;
+  width: 160px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #8a2c2c;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  object-fit: contain;
+}
+
 body {
   background-color: #bdc7f7;
   color: #f0f0f0;
@@ -5,44 +37,20 @@ body {
   margin: 20px;
 }
 
-.images-container {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.item {
-  background-color: #bdc7f7;
-  border: 2px solid #3110a7; 
-  border-radius: 8px;
-  padding: 15px;
-  width: 180px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #3110a7;
-}
-
-.item img {
-  max-width: 150px;
-  border-radius: 5px;
-}
-
 h1, h2 {
   text-align: center;
   color: #3110a7;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
-  background-color: #3110a7;
+  background-color: #8a2c2c;
   color: white;
   border: none;
-  padding: 10px 18px;
+  padding: 8px 12px;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -50,11 +58,7 @@ button {
 }
 
 button:hover {
-  background-color: #3110a7;
-}
-
-a {
-  text-decoration: none;
+  background-color: #a63a3a;
 }
 
 .login-prompt {
@@ -65,8 +69,8 @@ a {
 
 form {
   background-color: #3110a7;
-  padding: 20px;
-  max-width: 320px;
+  padding: 50px;
+  max-width: 350px;
   margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 0 15px #4636f4;
@@ -107,7 +111,7 @@ p.error-message {
   font-weight: bold;
   border-radius: 6px;
   max-width: 320px;
-  margin: 0 auto 15px auto;
+  margin: 0 auto 15px;
 }
 
 p.welcome-text {
@@ -119,7 +123,6 @@ p.welcome-text {
 a.logout-link {
   color: #8a2c2c93;
   font-weight: bold;
-  text-decoration: none;
   border: 2px solid #8a2c2c;
   padding: 8px 20px;
   border-radius: 6px;
@@ -129,53 +132,4 @@ a.logout-link {
 a.logout-link:hover {
   background-color: #8a2c2c;
   color: white;
-  text-decoration: none;
-}
-
-.images-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.item {
-  border: 2px solid #8a2c2c;
-  padding: 10px;
-  text-align: center;
-  background-color: #ffebeb;
-  border-radius: 8px;
-  width: 160px;
-}
-
-button {
-  background-color: #8a2c2c;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #8a2c2c;
-}
-
-.error-message {
-  color: #8a2c2c;
-}
-
-.login-prompt {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-.welcome-text {
-  font-size: 20px;
-  color: #8a2c2c;
-}
-
-.logout-link {
-  color: #8a2c2c;
-  text-decoration: none;
-  font-weight: bold;
 }

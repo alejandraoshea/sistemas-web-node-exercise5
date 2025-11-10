@@ -30,7 +30,6 @@ const items = [
 
 app.get("/", (req, res) => {
   if (req.session.logged) {
-
     res.render("index", { items, logged: true });
   } else {
     res.render("index", { items: [], logged: false });
@@ -44,7 +43,7 @@ app.get("/login", (req, res) => {
 app.post("/login", (req, res) => {
   const { user, pass } = req.body;
 
-  if (user === "admin" && pass === "1234") {
+  if (user === "mv1" && pass === "1234") {
     req.session.logged = true;
     return res.redirect("/private");
   }
